@@ -4,7 +4,9 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+
+// 2023.05.23 javascript使用するため、turbolinksコメント化
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
