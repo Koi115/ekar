@@ -1,9 +1,10 @@
 .wrapper {
   display: flex;
+  background-color: #000000;
 }
 
 
-/* サイドバー */
+/****** サイドバー ******/
 .side-bar {
   background-color: #00ced1;
   width: 300px;
@@ -14,14 +15,80 @@
   height: 100px;
 }
 
+h1, h2 {
+  text-align: center;
+  font-family: "M PLUS 1p";
+}
+
+
 .side-bar-center {
   background-color: #6495ed;
   height: calc(100vh - 100px);
 }
 
 
+.user-info {
+  background-color: #ffffe0;
+  padding: 10px;
+  border-radius: 10px;
+  /* margin-bottom: 0px; */
+}
 
-/* メインパート */
+.user-info div {
+  margin-top: 7px;
+}
+
+.log-out-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.log-out-head div {
+  margin: 0;
+  padding: 0;
+}
+
+
+.log-out {
+  background-color: #7fffd4;
+  border-radius: 6px;
+  padding: 3px;
+  font-size: 14px;
+}
+
+
+
+.pts-index p {
+  text-align: right;
+  padding: 5px;
+  color: white;
+}
+
+.new-pt-regi p {
+  text-align: right;
+  padding: 5px;
+  color: white;
+}
+
+.user-regi p {
+  text-align: center;
+  padding: 5px;
+  color: red;
+  background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+/****** メインパート ******/
 .main-header {
   background-color: #ee80ee;
   height: 80px;
@@ -31,9 +98,22 @@
   background-color: #FFFFFF;
   width: calc(100vw - 230px);
   height: calc(100vh - 80px - 50px);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .main-footer {
   background-color: #FA8072;
   height: 50px;
 }
+
+
+
+
+.sign_up {
+  text-decoration: none;
+}
+
+
+
+

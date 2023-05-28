@@ -1,0 +1,281 @@
+
+
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      使用者情報入力
+    </h1>
+  </div>
+
+  <%= render "shared/error_messages", model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">社員ID</label>
+    </div>
+    <%= f.text_area :employee_id, class:"input-default", id:"employee_id", placeholder:"ID", maxlength:"10" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">名前（フルネーム）</label>
+    </div>
+    <%= f.text_area :full_name, class:"input-default", id:"full_name", placeholder:"例) 山田太郎", maxlength:"20" %>
+  </div>
+
+<%
+=begin
+%>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">メールアドレス</label>
+    </div>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+  </div>
+<%
+=end
+%>
+
+
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード</label>
+    </div>
+    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"3文字以上の半角英数字" %>
+
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード(確認)</label>
+    </div>
+    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">部署ID</label>
+    </div>
+    <%= f.number_field :department_id, class:"input-default", id:"department_id", placeholder:"例) 1:外来" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">職種ID</label>
+    </div>
+    <%= f.number_field :occupation_id, class:"input-default", id:"occupation_id" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">グループID</label>
+    </div>
+    <%= f.number_field :group_id, class:"input-default", id:"group_id" %>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+
+  <div class='register-btn'>
+    <%= f.submit "使用者を登録" ,class:"register-red-btn" %>
+  </div>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%
+=begin
+%>
+
+<div class="contents row">
+  <div class="container">
+    <h2>Sign up</h2>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email %>
+      </div>
+
+
+      <div class="field">
+        <%= f.label :employee_id %><br />
+        <%= f.number_field :employee_id %>
+      </div>
+
+      <div class="field">
+        <%= f.label :full_name %><br />
+        <%= f.text_field :full_name %>
+      </div>
+
+
+      <div class="field">
+        <%= f.label :department_id %><br />
+        <%= f.number_field :department_id %>
+      </div>
+
+      <div class="field">
+        <%= f.label :occupation_id %><br />
+        <%= f.number_field :occupation_id %>
+      </div>
+
+      <div class="field">
+        <%= f.label :group_id %><br />
+        <%= f.number_field :group_id %>
+      </div>
+
+
+
+
+
+
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%
+=end
+%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%
+=begin
+%>
+
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+<%
+=end
+%>

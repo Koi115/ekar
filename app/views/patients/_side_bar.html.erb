@@ -1,5 +1,52 @@
 <div class="side-bar-header">
+    <h1 class="heading-012"><span>電子カルテ</span></h1>
+    <h2>患者情報管理</h2>
 </div>
 
 <div class="side-bar-center">
+
+  <div class="user-info">
+    <div> ID :
+       <%= current_user.employee_id %>
+    </div> 
+    <div> 使用者 : 
+      <%= link_to current_user.full_name, root_path(current_user), class: "current_user_display" %> さん
+    </div>
+    <div class="current_user_occupation"> 職種 :
+      <%= current_user.occupation.name %> 
+    </div>
+    <div class="log-out-head">
+      <div> 病棟 :
+       <%= current_user.department.name %> 
+       </div>
+      <div class="log-out">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> 
+       </div>
+
+
+    </div>
+  </div>
+
+
+
+  <div class="pts-index">
+    <p> 患者情報一覧</p>
+  </div>
+
+  <div class="new-pt-regi">
+    <p> 新規患者情報登録</p>
+  </div>
+
+
+  <% if current_user.group_id == 3 %>
+    <div class="user-regi">
+      <p>管理者用：</p>
+      <%= link_to '使用者登録', new_user_registration_path, class: "sign-up" %>
+    </div>
+  <% end %>
+
+
+
+
+
 </div>
