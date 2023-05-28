@@ -17,3 +17,44 @@
  * {
   box-sizing: border-box;
 }
+
+
+.current_user_display {
+  text-decoration: none;
+}
+
+.logout {
+  text-decoration: none;
+}
+
+.sign-up {
+  text-decoration: none;
+  margin-left: 130px;
+
+}
+
+.department-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+.occupation-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+.group-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+.indispensable {
+  color: red;
+}
+
+.error-message {
+  color: red;
+}

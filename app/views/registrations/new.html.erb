@@ -1,0 +1,171 @@
+
+
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      使用者情報の入力
+    </h1>
+  </div>
+
+  <%= render "shared/error_messages", model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">社員ID</label>
+    </div>
+    <%= f.text_area :employee_id, class:"input-default", id:"employee_id", placeholder:"ID", maxlength:"10" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">名前（フルネーム）</label>
+    </div>
+    <%= f.text_area :full_name, class:"input-default", id:"full_name", placeholder:"例) 山田太郎", maxlength:"20" %>
+  </div>
+
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード</label>
+    </div>
+    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"3文字以上の半角英数字" %>
+
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード(確認)</label>
+    </div>
+    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+  </div>
+
+<%
+=begin
+%>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">部署ID</label>
+    </div>
+    <%= f.number_field :department_id, class:"input-default", id:"department_id", placeholder:"例) 1:外来" %>
+  </div>
+
+
+
+
+<%
+=end
+%>
+
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">部署ID</label>
+    </div>
+    <%= f.collection_select(:department_id, Department.all, :id, :name, {}, {class:"department-select"}) %>
+  </div>
+
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">職種ID</label>
+    </div>
+    <%= f.collection_select(:occupation_id, Occupation.all, :id, :name, {}, {class:"occupation-select"}) %>
+  </div>
+
+
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">グループID</label>
+    </div>
+    <%= f.collection_select(:group_id, Group.all, :id, :name, {}, {class:"group-select"}) %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<%
+=begin
+%>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">グループID</label>
+    </div>
+    <%= f.number_field :group_id, class:"input-default", id:"group_id" %>
+  </div>
+
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">職種ID</label>
+    </div>
+    <%= f.number_field :occupation_id, class:"input-default", id:"occupation_id" %>
+  </div>
+
+
+
+<%
+=end
+%>
+
+
+
+
+
+<%
+=begin
+%>
+
+
+
+
+<div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">職種ID</label>
+    </div>
+    <%= f.number_field :occupation_id, class:"input-default", id:"occupation_id" %>
+  </div>
+
+
+
+
+
+<%
+=end
+%>
+
+
+
+
+
+  <br>
+  <br>
+  <br>
+
+
+  <div class='register-btn'>
+    <%= f.submit "使用者を登録" ,class:"register-pink-btn" %>
+  </div>
+
+  <br>
+
+
+  <div class='not-register-btn'>
+    <%= link_to '戻る', root_path, class: "not-register-blue-btn" %>
+  </div>
+
+</div>
+<% end %>
+

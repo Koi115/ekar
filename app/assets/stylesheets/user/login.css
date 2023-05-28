@@ -1,0 +1,30 @@
+.login-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+
+.login-pink-btn {
+  width: 100%;
+  background: #db7093;
+  border: 1px solid #db7093;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+
+.login-pink-btn:hover {
+  border-color: white;
+}
+
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+}
