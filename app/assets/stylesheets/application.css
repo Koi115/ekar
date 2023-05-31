@@ -29,30 +29,17 @@
 
 .sign-up {
   text-decoration: none;
+  color: white;
   margin-left: 130px;
 
 }
 
-.department-select {
-  height: 50px;
-  border-radius: 5px;
-  border-color: #d3d3d3;
-}
-
-.occupation-select {
-  height: 50px;
-  border-radius: 5px;
-  border-color: #d3d3d3;
-}
-
-.group-select {
-  height: 50px;
-  border-radius: 5px;
-  border-color: #d3d3d3;
-}
 
 .indispensable {
-  color: red;
+  font-size: 12px;
+  color: white;
+  background-color: red;
+  padding: 2px;
 }
 
 .error-message {

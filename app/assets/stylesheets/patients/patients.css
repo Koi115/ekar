@@ -1,0 +1,285 @@
+.wrapper {
+  display: flex;
+  background-color: #000000;
+}
+
+
+/*** サイドバー *********************************************************/
+.side-bar {
+  background-color: #00ced1;
+  width: 300px;
+  height: 100vh;
+}
+
+.side-bar-header {
+  height: 100px;
+}
+
+h1, h4 {
+  text-align: center;
+  font-family: "M PLUS 1p";
+}
+
+.side-bar-header h1, h4 {
+  color: beige;
+}
+
+
+
+.side-bar-center {
+  background-color: #6495ed;
+  height: calc(100vh - 100px);
+}
+
+
+.user-info {
+  background-color: #ffffe0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.user-info div {
+  margin-top: 7px;
+}
+
+.log-out-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.log-out-head div {
+  margin: 0;
+  padding: 0;
+}
+
+
+.log-out {
+  background-color: #7fffd4;
+  border-radius: 6px;
+  padding: 3px;
+  font-size: 14px;
+}
+
+
+
+.pts-index p {
+  text-align: right;
+  padding: 5px;
+  color: white;
+}
+
+.new-pt-regi {
+  display: block;
+  text-align: right;
+  padding: 5px;
+  color: white;
+
+}
+
+.user-regi p {
+  text-align: center;
+  padding: 5px;
+  color: red;
+  background-color: white;
+}
+
+
+.input-birth-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-birth-wrap select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+.new-pt-regi-button {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+
+/**** メインパート ************************************************************/
+
+
+
+/**** メイン  ヘッダー　**************/
+/* main-header の height を変える場合は、main-center の高さも調整すること */
+.main-header {
+  background-color: #6495ed;
+  height: 80px;
+}
+
+
+.main-header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header-ward {
+  font-size: 30px;
+  margin-left: 30px;
+  color: #fff;
+}
+
+.main-header-contents {
+  background-color: #ffffe0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 0 5px;
+}
+
+
+
+.pt-count-wrap {
+  margin-left: 60px;  
+  margin-right: 60px;
+}
+
+.gender-count-wrap {
+  margin-right: 60px;
+}
+
+
+.inf-count-wrap {
+  margin-right: 60px;
+}
+
+.trf-count-wrap {
+  margin-right: 60px;
+}
+
+
+.contents-font {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+
+
+
+/**** メイン  センター　**************/
+
+.main-center {
+  background-color: #afeeee;
+  width: calc(100vw - 230px);
+  height: calc(100vh - 80px - 10px);
+  overflow: scroll;
+}
+
+
+
+.gender-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+.blood_abo-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+
+.blood_rh-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+
+.transfer-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+
+.patient-text {
+  width: 70%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+
+.patient-explain {
+  width: 100%;
+  margin-top: 2vh;
+  text-align: center;
+}
+
+
+.weight-bold-text {
+  width: 47%;
+  text-align: center;
+}
+
+.main-center ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  list-style: none;
+}
+
+.main-center ul li {
+  display: inline-block;
+}
+
+
+/***  テーブル ***/
+table {
+  padding: 10px;
+  width: 90%;
+}
+
+th {
+  font-weight: normal;
+  background-color: #f8f6f2;
+  vertical-align: middle;
+  padding: 1rem;
+}
+
+td {
+  padding: .1rem 1rem .1rem;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffefd5;
+}
+
+tr:nth-child(even) {
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+/**** メイン  フッター　**************/
+
+/* main-footer の height を変える場合は、main-center の高さも調整すること */
+.main-footer {
+  background-color: #6495ed;
+  height: 10px;
+}
