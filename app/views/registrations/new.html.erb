@@ -76,6 +76,14 @@
   </div>
 
 
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">病棟ID</label>
+    </div>
+    <%= f.collection_select(:ward_id, Ward.all, :id, :name, {}, {class:"ward-select"}) %>
+  </div>
+
+
 
   <div class="form-group">
     <div class='form-text-wrap'>

@@ -174,3 +174,28 @@
 .not-register-btn:hover {
   border-color: white;
 }
+
+.department-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+.occupation-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+.ward-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}
+
+
+.group-select {
+  height: 50px;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+}

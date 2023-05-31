@@ -6,9 +6,10 @@ class User < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :department
+  belongs_to :ward
   belongs_to :group
   belongs_to :occupation
-
+  
 
 
   validates :full_name, presence: true
@@ -16,6 +17,7 @@ class User < ApplicationRecord
   validates :employee_id, presence: true
 
   validates :department_id, numericality: { other_than: 1, message: "can't be blank"} 
+  validates :ward_id, numericality: { other_than: 1, message: "can't be blank"} 
   validates :occupation_id, numericality: { other_than: 1, message: "can't be blank"} 
   validates :group_id, numericality: { other_than: 1, message: "can't be blank"} 
 

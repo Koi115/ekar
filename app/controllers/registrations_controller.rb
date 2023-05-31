@@ -8,6 +8,7 @@ class RegistrationsController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    binding.pry
     if @user.save
       redirect_to root_path
     else
@@ -20,7 +21,7 @@ class RegistrationsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:employee_id, :full_name, :department_id, :occupation_id, :group_id, :email, :password, :password_confirmation)
+    params.require(:user).permit(:employee_id, :full_name, :department_id, :occupation_id, :ward_id, :group_id, :email, :password, :password_confirmation)
   end
 
 

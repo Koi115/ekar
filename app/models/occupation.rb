@@ -2,7 +2,7 @@ class Occupation < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '医師' },
-    { id: 3, name: '指定医' },
+    { id: 3, name: '精神保健指定医' },
     { id: 4, name: '看護師' },
     { id: 5, name: '薬剤師' },
     { id: 6, name: '作業療法士' },

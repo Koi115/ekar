@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_26_001038) do
+ActiveRecord::Schema.define(version: 2023_05_28_235136) do
+
+  create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "fa_patient_id", null: false
+    t.string "full_name", default: "", null: false
+    t.string "full_name_kana", default: "", null: false
+    t.integer "gender_id", default: 1, null: false
+    t.integer "blood_abo_id", default: 1, null: false
+    t.integer "blood_rh_id", default: 1, null: false
+    t.date "date_of_birth", null: false
+    t.integer "transfer_id", default: 1, null: false
+    t.text "description", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +39,7 @@ ActiveRecord::Schema.define(version: 2023_05_26_001038) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "ward_id", default: 1, null: false
     t.index ["employee_id"], name: "index_users_on_employee_id", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

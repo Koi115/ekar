@@ -1,6 +1,6 @@
 <div class="side-bar-header">
-    <h1 class="heading-012"><span>電子カルテ</span></h1>
-    <h2>患者情報管理</h2>
+    <h1 class="heading-012"><span>いーかる</span></h1>
+    <h4>患者情報管理</h4>
 </div>
 
 <div class="side-bar-center">
@@ -17,7 +17,7 @@
     </div>
     <div class="log-out-head">
       <div> 病棟 :
-       <%= current_user.department.name %> 
+       <%= current_user.ward.name %> 
        </div>
       <div class="log-out">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> 
@@ -34,13 +34,13 @@
   </div>
 
   <div class="new-pt-regi">
-    <p> 新規患者情報登録</p>
+    <%= link_to '新規患者情報登録', new_patient_path, class: "new-pt-regi-button" %> 
   </div>
 
 
   <% if current_user.group_id == 3 %>
     <div class="user-regi">
-      <p>管理者用：</p>
+      <p>管理者用</p>
       <%= link_to '使用者登録', new_user_registration_path, class: "sign-up" %>
     </div>
   <% end %>
