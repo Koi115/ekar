@@ -1,0 +1,37 @@
+
+<div class="main-center">
+
+  <table>
+    <tr>
+  <%# # もし外来患者リストなら、部屋番号はなし# %>
+      <th>部屋番号</th>
+      <th>患者ID</th>
+      <th>名前</th>
+      <th>フリガナ</th>
+      <th>性別</th>
+      <th>生年月日</th>
+      <th>年齢</th>
+  <%# # もし外来患者リストなら、入院形態はなし# %>
+      <th>入院形態</th>
+    </tr>
+
+    <% @patients.each do |patient| %>
+      <tr>
+  <%# # もし外来患者リストなら、部屋番号はなし# %>
+        <td> 部屋番号 </td>
+        <td><%= patient.fa_patient_id %></td>
+        <td><%= patient.full_name %></td>
+        <td><%= patient.full_name_kana %></td>
+        <td><%= patient.gender.name %></td>
+        <td id="inputBirth"><%= patient.date_of_birth %></td>
+        <td class="age">  </td>
+  <%# # もし外来患者リストなら、入院形態はなし# %>
+        <td> 入院形態 </td>
+      </tr>
+    <% end %>
+
+  </table>
+
+
+</div>
+

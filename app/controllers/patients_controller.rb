@@ -9,6 +9,13 @@ class PatientsController < ApplicationController
         # if @params[ward_id] != nil
         #   @patients = Patient.where(ward.id: @params[ward_id])
         # end
+    @patient_count = @patients.count
+    @male_patient_count = @patients.where(gender_id: '2').count
+    @female_patient_count = @patients.where(gender_id: '3').count
+    @lgbt_patient_count = @patients.where(gender_id: '4').count
+    @doppo_patient_count = @patients.where(transfer_id: '2').count
+    @goso_patient_count = @patients.where(transfer_id: '3').count
+    @tanso_patient_count = @patients.where(transfer_id: '4').count    
   end
 
   def new
@@ -35,7 +42,7 @@ class PatientsController < ApplicationController
   # end
 
   def patient_params
-    params.require(:patient).permit(:fa_patient_id, :full_name, :full_name_kana, :gender_id, :blood_abo_id, :blood_rh_id, :date_of_birth, :transfer_id, :description)
+    params.require(:patient).permit(:fa_patient_id, :full_name, :full_name_kana, :gender_id, :blood_abo_id, :blood_rh_id, :date_of_birth, :transfer_id, :description, :image)
   end
 
 
