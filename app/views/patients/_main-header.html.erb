@@ -1,0 +1,51 @@
+<div class="main-header">
+  <div class="main-header-wrap">
+
+    <div class="main-header-ward">
+      <select name="ward-num">
+        <option value='2'>外来</option>
+        <option value='3'>1病棟</option>
+        <option value='4'>2病棟</option>
+      </select>
+    </div>
+
+    <div class="main-header-contents">
+      <div class="pt-count-wrap">
+        <div>患者数</div>
+          <div  class="contents-font">
+            <div>現在数 <%= @patient_count %> 名</div>
+            <div>総床数  50 名</div>
+            <div>　</div>
+          </div>
+      </div>
+
+      <div class="gender-count-wrap">
+          <div>性別</div>
+          <div  class="contents-font">
+            <div>男性  <%= @male_patient_count %> 名</div>
+            <div>女性  <%= @female_patient_count %> 名</div>
+            <div>その他  <%= @lgbt_patient_count %> 名</div>
+        </div>
+      </div>
+
+      <div class="inf-count-wrap">
+          <div>感染症</div>
+          <div  class="contents-font">
+            <div>HCV  1 名</div>
+            <div>HBV  0 名</div>
+            <div>MRSA 3 名</div>
+        </div>
+      </div>
+      <div class="trf-count-wrap">
+          <div>移送区分</div>
+          <div  class="contents-font">
+            <div>担送  <%= @tanso_patient_count %> 名</div>
+            <div>護送  <%= @goso_patient_count %> 名</div>
+            <div>独歩  <%= @doppo_patient_count %> 名</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

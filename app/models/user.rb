@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :full_name, presence: true
   validates_uniqueness_of :employee_id
   validates :employee_id, presence: true
+  validates :employee_id, numericality: true
 
   validates :department_id, numericality: { other_than: 1, message: "can't be blank"} 
   validates :ward_id, numericality: { other_than: 1, message: "can't be blank"} 

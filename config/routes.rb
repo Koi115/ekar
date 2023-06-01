@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   # get 'patients/index'
   root to: "patients#index"
-  resources :patients, only: [:index, :new, :create, :edit, :update]
+  resources :patients, only: [:index, :new, :create, :show, :edit, :update]
 
 
 

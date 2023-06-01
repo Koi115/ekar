@@ -12,7 +12,7 @@
 }
 
 .side-bar-header {
-  height: 100px;
+  height: 80px;
 }
 
 h1, h4 {
@@ -21,6 +21,8 @@ h1, h4 {
 }
 
 .side-bar-header h1, h4 {
+  margin: 0 auto;
+  padding: 5px;
   color: beige;
 }
 
@@ -28,14 +30,14 @@ h1, h4 {
 
 .side-bar-center {
   background-color: #6495ed;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
 }
 
 
 .user-info {
   background-color: #ffffe0;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 .user-info div {
@@ -171,6 +173,13 @@ h1, h4 {
   font-size: 12px;
 }
 
+.main-header-ward select {
+  padding: 10px;
+  border: none;
+  background-color: #afeeee;
+  border-radius: 3px;
+  color: #00008b;
+}
 
 
 
