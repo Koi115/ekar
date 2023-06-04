@@ -1,0 +1,109 @@
+
+
+/**** メインパート ************************************************************/
+
+/**** メイン  センター　**************/
+
+.main-center-show {
+  background-color: #afeeee;
+  width: calc(100vw - 230px);
+  height: calc(100vh - 80px - 10px);
+  overflow: scroll;
+}
+
+.upper-block {
+  display: flex;
+  justify-content: left;
+  height: 130px;
+}
+
+
+.item-img {
+  width: 160px;
+  height: 120px;
+  margin: 10px 0 10px 40px;
+}
+
+
+.basic_info1 {
+  margin: 10px 0 10px 40px;
+}
+
+.basic_info2 {
+  margin: 10px 0 10px 40px;
+}
+
+/***** タブ *****/
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+ margin: 0px auto 20px;
+ background-color: #ffe4b5;
+ padding: 3px; 
+}
+
+.ul {
+  margin: 0;
+  padding: 0;
+}
+
+.tabs {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs li {
+  width: 12.3%;
+  list-style: none;
+}
+
+.tabs li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: #6495ed;
+  border-radius: 5px 5px 0 0;
+  transition: 0.2s;
+}
+
+.tabs li a:not(.active):hover {
+opacity: 0.5;
+}
+
+.tabs li a.active {
+  background-color: #ffffe0;
+}
+
+
+
+
+
+.contents {
+  margin: 0px 1px 10px;
+  padding: 0px 1px 10px;
+  /* height: 100px; */
+  background-color: #ffffe0;
+}
+
+
+
+.contents li {
+  /* background-color: pink; */
+  list-style: none;
+  padding: 20px;
+  display: none;
+}
+
+
+.contents li.active {
+  display: block;
+}
