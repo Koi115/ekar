@@ -19,7 +19,7 @@ class Roombed < ActiveHash::Base
     { id: 17, name: '105-4' },
     { id: 18, name: '106' },
     { id: 19, name: '107' },
-    { id: 20, name: '199' }
+    { id: 20, name: '199' },
     { id: 21, name: '201-1' },
     { id: 22, name: '201-2' },
     { id: 23, name: '201-3' },
