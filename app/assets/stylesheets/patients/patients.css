@@ -136,6 +136,10 @@ h1, h4 {
   font-size: 30px;
   margin-left: 30px;
   color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 3px;
 }
 
 .main-header-contents {
@@ -177,8 +181,9 @@ h1, h4 {
   padding: 10px;
   border: none;
   background-color: #afeeee;
-  border-radius: 3px;
+
   color: #00008b;
+
 }
 
 

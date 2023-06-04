@@ -6,7 +6,9 @@ class Patient < ApplicationRecord
   belongs_to :blood_rh
   belongs_to :transfer
   has_one_attached :image
-
+  # join でのテーブル結合のため、admmissions テーブルとはhas_one　だが、has_many にしておく  
+  # has_one :admission
+  has_many :admissions
 
   validates :full_name, presence: true
   validates :full_name_kana, presence: true

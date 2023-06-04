@@ -10,6 +10,9 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../age_calc");
+require("../show_tab");
+
+
 require("../select_ward");
 
 
