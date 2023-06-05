@@ -38,8 +38,21 @@ class Roombed < ActiveHash::Base
     { id: 36, name: '205-4' },
     { id: 37, name: '206' },
     { id: 38, name: '207' },
-    { id: 39, name: '299' }
-
+    { id: 39, name: '299' },
+    { id: 40, name: '外来待機室1'},
+    { id: 41, name: '外来待機室2'},
+    { id: 42, name: '外来待機室3'},
+    { id: 43, name: '外来待機室4'},
+    { id: 44, name: '外来待機室5'},
+    { id: 45, name: '外来待機室6'},
+    { id: 46, name: '外来待機室7'},
+    { id: 47, name: '外来待機室8'},
+    { id: 48, name: '外来待機室9'},
+    { id: 49, name: '病棟待機室1'},
+    { id: 50, name: '病棟待機室2'},
+    { id: 51, name: '病棟待機室3'},
+    { id: 52, name: '病棟待機室4'},
+    { id: 53, name: '病棟待機室5' }
   ]
 
   include ActiveHash::Associations
