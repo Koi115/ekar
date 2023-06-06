@@ -109,19 +109,19 @@ https://ekar.onrender.com
 
 # 開発環境
 ・フロントエンド<br>
-  HTML
+&emsp;  HTML
   CSS
   JavaScript<br>
 ・バックエンド<br>
-  Ruby on Rails v 6.0.0
+&emsp;  Ruby on Rails v 6.0.0
   ruby v 2.6.5
   mySql2<br>
 ・インフラ<br>
-  Render deploy<br>
+&emsp;  Render deploy<br>
 ・テスト<br>
-  Rspec<br>
+&emsp;  Rspec<br>
 ・テキストエディタ <br>
-  VsCode<br>
+&emsp;  VsCode<br>
 
 
 
@@ -130,9 +130,8 @@ https://ekar.onrender.com
 # 工夫したポイント
 ・データベース設計<br>
   ユーザがどのように使用するのかを考え、データベース設計を行なった。<br>
-  例）新規患者が入院する場合、外来看護師が最初に患者を登録し、そして患者を入院待ち状態にする。<br>
-     次に病棟看護師が患者を選択し、病棟への入院処理を行う。<br>
-     入院中は、病棟間で転棟することもありえるため病棟内に待機室を設ける、等
+  例）新規患者が入院する場合、外来看護師が最初に患者を登録し、そして患者を入院待ち状態にする。次に病棟看護師が患者を選択し、病棟への入院処理を行う。<br>
+  入院中は、病棟間で転棟することもありえるため病棟内に待機室を設ける、等を想定し、データベースの設計を行なった
      
 
 
