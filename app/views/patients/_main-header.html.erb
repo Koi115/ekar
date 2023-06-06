@@ -1,16 +1,30 @@
 <div class="main-header">
   <div class="main-header-wrap">
 
-    <div class="main-header-ward">
+    <%# <div class="main-header-ward">
       <select name="ward-num">
         <option value='2'>外来</option>
         <option value='3'>1病棟</option>
         <option value='4'>2病棟</option>
       </select>
+    </div> %>
+
+
+    <%= form_with url: root_path, method: :get, local: true do |f| %>
+    <div class="main-header-search">
+      <%= f.collection_select(:ward_num, Ward.all, :id, :name, {selected: @ward_num}, {class:"main-header-ward", id:"ward"}) %>
+      <%# ボタン %>
+      <div class="ward_search-btn-contents">
+        <%= f.submit "検索" ,class:"ward_search-btn" %>
+      </div>
+      <%# /ボタン %>
     </div>
+  <% end %>
 
 
 
+
+  <% if action_name == 'index' %>
     <div class="main-header-contents">
       <div class="pt-count-wrap">
         <div>患者数</div>
@@ -47,6 +61,9 @@
         </div>
       </div>
     </div>
+  <% end %>
+
+
   </div>
 </div>
 

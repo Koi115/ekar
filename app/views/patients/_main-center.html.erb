@@ -18,10 +18,16 @@
     <% @patients.each do |patient| %>
       <tr>
   <%# # もし外来患者リストなら、部屋番号はなし# %>
-        <td> 部屋番号 </td>
-        <td><%= patient.fa_patient_id %></td>
-        <td><%= patient.full_name %></td>
-        <td><%= patient.full_name_kana %></td>
+        <%# <td> 部屋番号 </td> %>
+        <%# <td><%= patient.admission.ward_id %>
+        <td id="roombed">
+          <% admission = patient.admissions.first %>
+          <%= Roombed.find_by(id: admission.roombed_id)&.name  %>
+        </td>
+
+        <td><%=link_to patient.fa_patient_id, "/patients/#{patient.id}" %></td>
+        <td><%=link_to patient.full_name, "/patients/#{patient.id}" %></td>
+        <td><%=link_to  patient.full_name_kana, "/patients/#{patient.id}" %></td>
         <td><%= patient.gender.name %></td>
         <td id="inputBirth"><%= patient.date_of_birth %></td>
         <td class="age">  </td>
@@ -32,6 +38,6 @@
 
   </table>
 
-
 </div>
+
 
