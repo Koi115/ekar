@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_01_075126) do
+ActiveRecord::Schema.define(version: 2023_06_07_012658) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,20 @@ ActiveRecord::Schema.define(version: 2023_06_01_075126) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.string "postal_code", default: ""
+    t.integer "prefecture_id", default: 40
+    t.string "city", default: ""
+    t.string "house_number", default: ""
+    t.string "building_name", default: ""
+    t.string "phone_number", default: ""
+    t.string "phone_number2", default: ""
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_addresses_on_patient_id"
+  end
+
   create_table "admissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "patient_id", null: false
     t.integer "ward_id", default: 2, null: false
@@ -40,7 +54,27 @@ ActiveRecord::Schema.define(version: 2023_06_01_075126) do
     t.date "admission_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "hxofadm"
     t.index ["patient_id"], name: "index_admissions_on_patient_id"
+  end
+
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.string "full_name1", default: "", null: false
+    t.string "full_name_kana1", default: "", null: false
+    t.string "relation1", default: "", null: false
+    t.string "phone_number11", default: "", null: false
+    t.string "phone_number12", default: "", null: false
+    t.string "description1", default: "", null: false
+    t.string "full_name2", default: "", null: false
+    t.string "full_name_kana2", default: "", null: false
+    t.string "relation2", default: "", null: false
+    t.string "phone_number21", default: "", null: false
+    t.string "phone_number22", default: "", null: false
+    t.string "description2", default: "", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_contacts_on_patient_id"
   end
 
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,6 +89,7 @@ ActiveRecord::Schema.define(version: 2023_06_01_075126) do
     t.text "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "pmhx"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,5 +111,7 @@ ActiveRecord::Schema.define(version: 2023_06_01_075126) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "patients"
   add_foreign_key "admissions", "patients"
+  add_foreign_key "contacts", "patients"
 end

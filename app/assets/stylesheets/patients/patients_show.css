@@ -18,10 +18,10 @@
 }
 
 
-.item-img {
+.patient-img {
   width: 160px;
   height: 120px;
-  margin: 10px 0 10px 40px;
+  margin: 10px 0 10px 52px;
 }
 
 
@@ -30,6 +30,10 @@
 }
 
 .basic_info2 {
+  margin: 10px 0 10px 40px;
+}
+
+.basic_info3 {
   margin: 10px 0 10px 40px;
 }
 
