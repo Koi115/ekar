@@ -4,38 +4,52 @@
 
   <div class="main-center-show1">
 
-  <%# 上側　患者の基本情報 %>
+<%# 上側  患者の基本情報 %>
     <div class="upper-block">
 
+
       <div class="photo">
-        <%= image_tag 'dummy.png', class: "item-img" %>
+        <%  if @patient.image.attached? %>
+          <%= image_tag @patient.image.variant(resize: '160x120'), class: "patient-img" %>
+        <% else %>
+          <%= image_tag 'dummy.png', class: "patient-img" %>
+        <% end %>
       </div>
 
       <div  class="basic_info1">
         <br>
-        ID：5555555<br>
-        フリガナ：ヤマダハナコ<br>
-        名前：山田花子<br>
-        性別：女性<br>
+        ID：<%= @patient.fa_patient_id %><br>
+        フリガナ：<%= @patient.full_name_kana %><br>
+        名前：<%= @patient.full_name %><br>
+        性別：<%= @patient.gender.name %><br>
       </div>
 
       <div  class="basic_info2">
         <br>
-        生年月日：1966-11-12<br>
+        生年月日：<%= @patient.date_of_birth %><br>
         年齢：　56歳<br>
-        血液型：B 　+<br>
-        移送区分：護送<br>
+        血液型：<%= @patient.blood_abo.name %> <%= @patient.blood_rh.name %><br>
+        移送区分：<%= @patient.transfer.name %><br>
       </div>
 
 
+      <div  class="basic_info3">
+        <br>
+        ベッド番号：
+          <% @admission = @patient.admissions.first %>
+          <%= Roombed.find_by(id: @admission.roombed_id)&.name  %><br>
+      </div>
+
     </div>
-  <%# 下側　タブでの詳細情報 %>
+
+
+<%# 下側  タブでの詳細情報 %>
     <div class="lower-block">
       <main>
         <ul class="tabs">
           <li><a href="" class="active">基本情報</a></li>
-          <li><a href="" >連絡先１</a></li>
-          <li><a href="" >連絡先２</a></li>
+          <li><a href="" >住所</a></li>
+          <li><a href="" >連絡先</a></li>
           <li><a href="" >アレルギー</a></li>
           <li><a href="" >感染症</a></li>
           <li><a href="" >食事</a></li>
@@ -43,28 +57,35 @@
           <li><a href="" >入院歴</a></li>
         </ul>
 
+
         <ul class="contents">
-          <li class="active">補足</a>
+<%#------- 基本情報　------- %>
+          <li class="active"></a>
             <div class="additional-basic-info">
-            　既往歴　　　+　アナムネ
-            　あああああああああああああああああああああああああああああああああああああああ
-            　いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
-            　ううううううううううううううううううううううううううううううううううううううう
-            　えええええええええええええええええええええええええええええええええええええええ
-            　おおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
+            既往歴<br>
+            <%= @patient.pmhx %>
+
+            <br>
+            <br>
+            補足<br>
+            <%= @patient.description %>
+
             </div>
           </li>
-          <li>連絡先１</a>
+<%#------- 住所　------- %>          
+          <li></a>
               <div class="em-contact1"> 京都府京都市伏見区泰長老1-4-5</div>
           </li>
-          <li>連絡先２</a>
-              <div class="em-contact2"> 愛媛県松山市西一万4-8-6</div>
+<%#------- 連絡先　------- %>          
+          <li></a>
+              <div class="em-contact1"> 愛媛県松山市西一万4-8-6</div>
+              <div class="em-contact2"> 京都府京都市山科区・・・</div>
           </li>
           <li>アレルギー</a>
-          　卵、さば、アルコール、
+          卵、さば、アルコール、
           </li>
           <li>感染症</a>
-          　HCV, HBV, MRSA・・・・
+          HCV, HBV, MRSA・・・・
           </li>
           <li>食事</a>
             食事形態　普通、五分粥、キザミ食、。。。。
@@ -76,8 +97,8 @@
             入院歴
           </li>
         </ul>
-      </main>
 
+      </main>
     </div>
   </div>
 </div>
