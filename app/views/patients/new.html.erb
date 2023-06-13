@@ -184,9 +184,7 @@
       </div>
 
 
-<%
-=begin
-%>
+
 
 
 
@@ -214,28 +212,28 @@
     <div class='form-text-wrap'>
       <label class="form-text">患者との関係</label>
     </div>
-    <%= f.text_area :relation1, class:"input-default", id:"frelation1", placeholder:"例) 父・母・息子・娘", maxlength:"20" %>
+    <%= f.text_area :relation1, class:"input-default", id:"relation1", placeholder:"例) 父・母・息子・娘", maxlength:"20" %>
   </div>
 
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">電話番号11</label>
         </div>
-        <%= f.text_field :phone_number11, class:"input-default", id:"phone-number11", placeholder:"例）09012345678",maxlength:"11"%>
+        <%= f.text_field :phone_number11, class:"input-default", id:"phone_number11", placeholder:"例）09012345678",maxlength:"11"%>
       </div>
 
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">電話番号12</label>
         </div>
-        <%= f.text_field :phone_number12, class:"input-default", id:"phone-number12", placeholder:"例）09012345678",maxlength:"11"%>
+        <%= f.text_field :phone_number12, class:"input-default", id:"phone_number12", placeholder:"例）09012345678",maxlength:"11"%>
       </div>
 
   <div class="patient-explain">
       <div class="weight-bold-text">
         <label class="form-text">連絡先１の補足情報</label>
       </div>
-      <%= f.text_area :description1, class:"patient-text", id:"pat-cont-rel-appendix1", placeholder:"連絡先1の補足情報（1,000文字まで）" , rows:"10" ,maxlength:"1000" %>
+      <%= f.text_area :description1, class:"patient-text", id:"description1", placeholder:"連絡先1の補足情報（1,000文字まで）" , rows:"10" ,maxlength:"1000" %>
   </div>
 
 
@@ -262,14 +260,14 @@
     <div class='form-text-wrap'>
       <label class="form-text">患者との関係</label>
     </div>
-    <%= f.text_area :relation2, class:"input-default", id:"frelation2", placeholder:"例) 父・母・息子・娘", maxlength:"20" %>
+    <%= f.text_area :relation2, class:"input-default", id:"relation2", placeholder:"例) 父・母・息子・娘", maxlength:"20" %>
   </div>
 
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">電話番号21</label>
         </div>
-        <%= f.text_field :phone_number21, class:"input-default", id:"phone-number21", placeholder:"例）09012345678",maxlength:"11"%>
+        <%= f.text_field :phone_number21, class:"input-default", id:"phonenumber21", placeholder:"例）09012345678",maxlength:"11"%>
       </div>
 
       <div class="form-group">
@@ -286,13 +284,14 @@
       <%= f.text_area :description2, class:"patient-text", id:"pat-cont-rel-appendix2", placeholder:"連絡先2の補足情報（1,000文字まで）" , rows:"10" ,maxlength:"1000" %>
   </div>
 
-<%
-=end
-%>
+
 
 
 <%#------ admissions テーブル部分 ------%>
 <%#------ 入力項目なし ------%>
+
+
+
 
 
   <br>

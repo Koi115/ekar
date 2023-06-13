@@ -60,7 +60,7 @@
 
         <ul class="contents">
 <%#------- 基本情報　------- %>
-          <li class="active"></a>
+          <li class="active">
             <div class="additional-basic-info">
             既往歴<br>
             <%= @patient.pmhx %>
@@ -73,27 +73,61 @@
             </div>
           </li>
 <%#------- 住所　------- %>          
-          <li></a>
-              <div class="em-contact1"> 京都府京都市伏見区泰長老1-4-5</div>
+          <li>
+              <div class="em-contact1">
+                住所<br>
+                <% @address = @patient.addresses.first %>
+                <%= @address.postal_code %><br>
+                <%= Prefecture.find_by(id: @address.prefecture_id)&.name  %>
+                <%= @address.city %>
+                <%= @address.house_number %>
+                <%= @address.building_name %>
+               <br>
+               <br>
+                本人連絡先<br>
+                <%= @address.phone_number %><br>
+                <%= @address.phone_number2 %>
+              </div>
+
           </li>
 <%#------- 連絡先　------- %>          
-          <li></a>
-              <div class="em-contact1"> 愛媛県松山市西一万4-8-6</div>
-              <div class="em-contact2"> 京都府京都市山科区・・・</div>
+          <li>
+            連絡先１<br>
+              <div class="em-contact1">
+                <% @contact = @patient.contacts.first %>
+                <%= @contact.full_name1 %>（ <%= @contact.full_name_kana1 %> ）<br>
+                本人との関係：<%= @contact.relation1 %><br>
+                電話番号1：<%= @contact.phone_number11 %><br>
+                電話番号2：<%= @contact.phone_number12 %><br>
+              </div>
+
+              <br>
+              <br>
+
+            連絡先２<br>
+              <div class="em-contact2">
+                <%= @contact.full_name2 %>（ <%= @contact.full_name_kana2 %> ）<br>
+                本人との関係：<%= @contact.relation2 %><br>
+                電話番号1：<%= @contact.phone_number21 %><br>
+                電話番号2：<%= @contact.phone_number22 %><br>
+              </div>
+
+
+
           </li>
-          <li>アレルギー</a>
+          <li>アレルギー
           卵、さば、アルコール、
           </li>
-          <li>感染症</a>
+          <li>感染症
           HCV, HBV, MRSA・・・・
           </li>
-          <li>食事</a>
+          <li>食事
             食事形態　普通、五分粥、キザミ食、。。。。
           </li>
-          <li>健康保険</a>
+          <li>健康保険
             国民健康保険、船員保険、社会保険、後期高齢者医療制度、
           </li>
-          <li>入院歴</a>
+          <li>入院歴
             入院歴
           </li>
         </ul>
