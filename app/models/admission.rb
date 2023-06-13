@@ -1,6 +1,8 @@
 class Admission < ApplicationRecord
 
-belongs_to :patient  
+belongs_to :patient
+
+extend ActiveHash::Associations::ActiveRecordExtensions
 belongs_to :ward
 belongs_to :roombed
 
