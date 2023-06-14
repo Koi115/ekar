@@ -2,7 +2,7 @@
 
 /**** メインパート ************************************************************/
 
-/**** メイン  センター　**************/
+/**** メイン  センター  **************/
 
 .main-center-show {
   background-color: #afeeee;
@@ -74,7 +74,8 @@ main {
   align-items: center;
   justify-content: center;
   height: 40px;
-  background-color: #6495ed;
+  background-color: #00ced1;
+  color: white;
   border-radius: 5px 5px 0 0;
   transition: 0.2s;
 }
@@ -85,6 +86,7 @@ opacity: 0.5;
 
 .tabs li a.active {
   background-color: #ffffe0;
+  color: black;
 }
 
 
@@ -98,8 +100,6 @@ opacity: 0.5;
   background-color: #ffffe0;
 }
 
-
-
 .contents li {
   /* background-color: pink; */
   list-style: none;
@@ -107,7 +107,26 @@ opacity: 0.5;
   display: none;
 }
 
-
 .contents li.active {
   display: block;
+}
+
+.additional-basic-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.patient-edit-btn {
+  text-align: center;
+  background-color: #6495EC;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFF;
+  border-radius: 3px;
+  margin: 20px 0px;
+  padding: 2vh 2vw;
+}
+
+.basic-info {
+  width: 70%;
 }

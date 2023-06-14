@@ -1,0 +1,126 @@
+<%= form_with(model: @contact,local: true,  class: 'registration-main' ) do |f| %>
+
+
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      連絡先情報の編集
+    </h1>
+  </div>
+
+
+  <%= render "shared/error_messages", model: f.object %>
+
+<%#------ contacts テーブル部分 ------%>
+<%#------ 連絡先１ ------%>
+      <h1 class='info-input-haedline'>
+        連絡先1 情報の入力
+      </h1>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">名前（姓名）</label>
+    </div>
+    <%= f.text_area :full_name1, class:"input-default", id:"full_name1", placeholder:"例) 山田太郎", maxlength:"20" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">名前（フリガナ）</label>
+    </div>
+    <%= f.text_area :full_name_kana1, class:"input-default", id:"full_name_kana1", placeholder:"例) ヤマダタロウ", maxlength:"20" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">患者との関係</label>
+    </div>
+    <%= f.text_area :relation1, class:"input-default", id:"relation1", placeholder:"例) 父・母・息子・娘", maxlength:"20" %>
+  </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">電話番号11</label>
+        </div>
+        <%= f.text_field :phone_number11, class:"input-default", id:"phone_number11", placeholder:"例）09012345678",maxlength:"11"%>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">電話番号12</label>
+        </div>
+        <%= f.text_field :phone_number12, class:"input-default", id:"phone_number12", placeholder:"例）09012345678",maxlength:"11"%>
+      </div>
+
+  <div class="patient-explain">
+      <div class="weight-bold-text">
+        <label class="form-text">連絡先１の補足情報</label>
+      </div>
+      <%= f.text_area :description1, class:"patient-text", id:"description1", placeholder:"連絡先1の補足情報（1,000文字まで）" , rows:"10" ,maxlength:"1000" %>
+  </div>
+
+
+<%#------ 連絡先２ ------%>
+      <h1 class='info-input-haedline'>
+        連絡先2 情報の入力
+      </h1>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">名前（姓名）</label>
+    </div>
+    <%= f.text_area :full_name2, class:"input-default", id:"full_name2", placeholder:"例) 山田太郎", maxlength:"20" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">名前（フリガナ）</label>
+    </div>
+    <%= f.text_area :full_name_kana2, class:"input-default", id:"full_name_kana2", placeholder:"例) ヤマダタロウ", maxlength:"20" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">患者との関係</label>
+    </div>
+    <%= f.text_area :relation2, class:"input-default", id:"relation2", placeholder:"例) 父・母・息子・娘", maxlength:"20" %>
+  </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">電話番号21</label>
+        </div>
+        <%= f.text_field :phone_number21, class:"input-default", id:"phonenumber21", placeholder:"例）09012345678",maxlength:"11"%>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">電話番号22</label>
+        </div>
+        <%= f.text_field :phone_number22, class:"input-default", id:"phone-number22", placeholder:"例）09012345678",maxlength:"11"%>
+      </div>
+
+  <div class="patient-explain">
+      <div class="weight-bold-text">
+        <label class="form-text">連絡先2の補足情報</label>
+      </div>
+      <%= f.text_area :description2, class:"patient-text", id:"pat-cont-rel-appendix2", placeholder:"連絡先2の補足情報（1,000文字まで）" , rows:"10" ,maxlength:"1000" %>
+  </div>
+
+
+  <br>
+  <br>
+
+  <div class='register-btn'>
+    <%= f.submit "連絡先情報を編集" ,class:"register-pink-btn" %>
+  </div>
+
+  <br>
+
+  <div class='not-register-btn'>
+    <%= link_to '戻る', "/patients/#{@patient.id}", class: "not-register-blue-btn"%>
+  </div>
+
+
+</div>
+<% end %>
