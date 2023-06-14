@@ -24,6 +24,8 @@ class PatientsController < ApplicationController
   def show
     @patient = Patient.find(params[:id])
     @ward_num = @patient.admissions.first&.ward_id
+    @admission = @patient.admissions.first
+    @address = @patient.addresses.first
   end
 
 
@@ -36,14 +38,6 @@ class PatientsController < ApplicationController
 
 
   def create
-    # binding.pry
-    # @patient = Patient.new(patient_params)
-    # if @patient.save
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
-
     @pat_add_cont_adm = PatAddContAdm.new(pat_add_cont_adm_params)
     date = params.require(:pat_add_cont_adm).permit(:date_of_birth)
 
@@ -65,24 +59,35 @@ class PatientsController < ApplicationController
   end
 
 
+  def edit
+    @patient = Patient.find(params[:id])
+  end
+
+  def update
+    @patient = Patient.find(params[:id])
+    if @patient.update(patient_params)
+      redirect_to "/patients/#{@patient.id}"
+    else
+      render :edit
+    end
+
+  end
+
 
 
   private
 
-  # def patient_params
-  #   params.require(:patient).permit(:fa_patient_id, :full_name, :full_name_kana, :gender_id, :blood_abo_id, :blood_rh_id, :date_of_birth, :transfer_id, :pmhx, :description, :image, :ward_num)
-  # end
-
-
-
-
   # :date_of_birth属性は後でmergeする
-  # admissions テーブルのカラムは、paramsでは必要なし。bcz 新規患者登録では、外来の固定値レコードを作るのみ
+# , :ward_num パラムスにいる？
   def pat_add_cont_adm_params
     params.require(:pat_add_cont_adm).permit(:fa_patient_id, :full_name, :full_name_kana, :gender_id, :blood_abo_id, :blood_rh_id, :transfer_id, :pmhx, :description, :image, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :phone_number2, :full_name1, :full_name_kana1, :relation1, :phone_number11, :phone_number12, :description1, :full_name2, :full_name_kana2, :relation2, :phone_number21, :phone_number22, :description2, :ward_id, :roombed_id, :admission_date, :hxofadm)
   end
 
-# , :ward_num
+
+
+def patient_params
+  params.require(:patient).permit(:fa_patient_id, :full_name, :full_name_kana, :gender_id, :blood_abo_id, :blood_rh_id, :transfer_id, :pmhx, :description, :image)
+end
 
 
 

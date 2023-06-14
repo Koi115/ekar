@@ -36,7 +36,6 @@
       <div  class="basic_info3">
         <br>
         ベッド番号：
-          <% @admission = @patient.admissions.first %>
           <%= Roombed.find_by(id: @admission.roombed_id)&.name  %><br>
       </div>
 
@@ -62,71 +61,93 @@
 <%#------- 基本情報　------- %>
           <li class="active">
             <div class="additional-basic-info">
-            既往歴<br>
-            <%= @patient.pmhx %>
+              <div class="basic-info">
+                既往歴<br>
+                <%= @patient.pmhx %>
 
-            <br>
-            <br>
-            補足<br>
-            <%= @patient.description %>
-
+                <br>
+                <br>
+                補足<br>
+                <%= @patient.description %>
+              </div>
+              <div class="basic-info-edit">
+                <%= link_to "基本情報の編集", edit_patient_path, method: :get, class: "patient-edit-btn" %> 
+              </div>
             </div>
           </li>
-<%#------- 住所　------- %>          
+<%#------- 住所　------- %>
           <li>
-              <div class="em-contact1">
+            <div class="additional-basic-info">
+              <div class="pt-address">
                 住所<br>
-                <% @address = @patient.addresses.first %>
                 <%= @address.postal_code %><br>
                 <%= Prefecture.find_by(id: @address.prefecture_id)&.name  %>
                 <%= @address.city %>
                 <%= @address.house_number %>
                 <%= @address.building_name %>
-               <br>
-               <br>
+                <br>
+                <br>
                 本人連絡先<br>
                 <%= @address.phone_number %><br>
                 <%= @address.phone_number2 %>
               </div>
+              <div class="basic-info-edit">
+                <%= link_to "住所の編集", edit_address_path, method: :get, class: "patient-edit-btn" %> 
+              </div>
+            </div>
 
           </li>
-<%#------- 連絡先　------- %>          
+<%#------- 連絡先  ------- %>
           <li>
-            連絡先１<br>
-              <div class="em-contact1">
-                <% @contact = @patient.contacts.first %>
-                <%= @contact.full_name1 %>（ <%= @contact.full_name_kana1 %> ）<br>
-                本人との関係：<%= @contact.relation1 %><br>
-                電話番号1：<%= @contact.phone_number11 %><br>
-                電話番号2：<%= @contact.phone_number12 %><br>
+            <div class="additional-basic-info">
+              <div class="pt-contact">
+                連絡先１<br>
+                  <div class="em-contact1">
+                    <% @contact = @patient.contacts.first %>
+                    <%= @contact.full_name1 %>（ <%= @contact.full_name_kana1 %> ）<br>
+                    本人との関係：<%= @contact.relation1 %><br>
+                    電話番号1：<%= @contact.phone_number11 %><br>
+                    電話番号2：<%= @contact.phone_number12 %><br>
+                  </div>
+
+                  <br>
+                  <br>
+
+                連絡先２<br>
+                  <div class="em-contact2">
+                    <%= @contact.full_name2 %>（ <%= @contact.full_name_kana2 %> ）<br>
+                    本人との関係：<%= @contact.relation2 %><br>
+                    電話番号1：<%= @contact.phone_number21 %><br>
+                    電話番号2：<%= @contact.phone_number22 %><br>
+                  </div>
               </div>
-
-              <br>
-              <br>
-
-            連絡先２<br>
-              <div class="em-contact2">
-                <%= @contact.full_name2 %>（ <%= @contact.full_name_kana2 %> ）<br>
-                本人との関係：<%= @contact.relation2 %><br>
-                電話番号1：<%= @contact.phone_number21 %><br>
-                電話番号2：<%= @contact.phone_number22 %><br>
+              <div class="basic-info-edit">
+                <%= link_to "連絡先の編集", edit_contact_path, method: :get, class: "patient-edit-btn" %> 
               </div>
-
-
-
+            </div>
           </li>
+
+
+
+
+
+<%#------- アレルギー  ------- %>
           <li>アレルギー
           卵、さば、アルコール、
           </li>
+<%#------- 感染症  ------- %>
           <li>感染症
           HCV, HBV, MRSA・・・・
           </li>
+<%#------- 食事  ------- %>
           <li>食事
             食事形態　普通、五分粥、キザミ食、。。。。
           </li>
+<%#------- 健康保険  ------- %>
           <li>健康保険
             国民健康保険、船員保険、社会保険、後期高齢者医療制度、
           </li>
+<%#------- 入院歴  ------- %>
           <li>入院歴
             入院歴
           </li>
