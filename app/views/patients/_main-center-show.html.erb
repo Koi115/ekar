@@ -24,21 +24,54 @@
         性別：<%= @patient.gender.name %><br>
       </div>
 
+
       <div  class="basic_info2">
         <br>
-        生年月日：<%= @patient.date_of_birth %><br>
-        年齢：　56歳<br>
-        血液型：<%= @patient.blood_abo.name %> <%= @patient.blood_rh.name %><br>
-        移送区分：<%= @patient.transfer.name %><br>
+          <div>生年月日：</div>
+          <div id="inputBirth"><%= @patient.date_of_birth %></div>
+          <div class="age"></div>
       </div>
 
 
       <div  class="basic_info3">
         <br>
-        ベッド番号：
-          <%= Roombed.find_by(id: @admission.roombed_id)&.name  %><br>
+        血液型：<%= @patient.blood_abo.name %> <%= @patient.blood_rh.name %><br>
+        移送区分：<%= @patient.transfer.name %><br>
       </div>
 
+      <div  class="basic_info4">
+        <br>
+        ベッド番号：
+          <%= Roombed.find_by(id: @admission.roombed_id)&.name  %><br>
+        主治医：高知土佐男<br>
+        担当Ns：土佐高知子
+      </div>
+
+      <div  class="basic_info5">
+        <br>
+
+<%# 入院ステータスが外来ならば、 %>
+        <% if @ward_num == 2 %>
+          <div class="basic-info-edit">
+            <%= link_to "入院待ちへ", admission_path, method: :put, class: "adm-status-chg-btn" %> 
+          </div>
+<%# 入院ステータスが入院まちならば、 %>
+        <% elsif @ward_num == 9 %> 
+          <div class="basic-info-edit">
+            <%= link_to "入院処理", edit_pending_admission_request_path, method: :get, class: "adm-status-chg-btn" %> 
+          </div>
+          <br>
+          <br>
+          <div class="basic-info-edit">
+            <%= link_to "外来へ戻す", pending_admission_request_path, method: :put, class: "adm-status-chg-btn" %> 
+          </div>
+<%# 入院ステータスが入院中ならば、 %>
+        <% else %>
+          <div class="basic-info-edit">
+            <%= link_to "退院処理", root_path, method: :get, class: "adm-status-chg-btn" %> 
+          </div>
+        <% end %>
+      </div>
     </div>
 
 

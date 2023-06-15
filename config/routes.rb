@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :patients, only: [:index, :new, :create, :show, :edit, :update] 
   resources :addresses, only: [:edit, :update]
   resources :contacts, only: [:edit, :update]
-
-
+  resources :admissions, only: [:update]
+  resources :pending_admission_requests, only: [:edit, :update]
 
 
 

@@ -10,6 +10,10 @@ class PatientsController < ApplicationController
       @ward_num = params[:ward_num]
     end
     @patient_count = @patients.count
+
+    @ward = Ward.find([@ward_num])
+    @ward_max_num_beds = @ward.first.max_num_beds
+
     @male_patient_count = @patients.where(gender_id: '2').count
     @female_patient_count = @patients.where(gender_id: '3').count
     @lgbt_patient_count = @patients.where(gender_id: '4').count

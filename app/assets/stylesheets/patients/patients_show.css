@@ -26,15 +26,23 @@
 
 
 .basic_info1 {
-  margin: 10px 0 10px 40px;
+  margin: 10px 0 10px 30px;
 }
 
 .basic_info2 {
-  margin: 10px 0 10px 40px;
+  margin: 10px 0 10px 30px;
 }
 
 .basic_info3 {
-  margin: 10px 0 10px 40px;
+  margin: 10px 0 10px 30px;
+}
+
+.basic_info4 {
+  margin: 10px 0 10px 30px;
+}
+
+.basic_info5 {
+  margin: 10px 0 10px 30px;
 }
 
 /***** タブ *****/
@@ -129,4 +137,22 @@ opacity: 0.5;
 
 .basic-info {
   width: 70%;
+}
+
+
+.basic-info-edit {
+  margin: 0;
+}
+
+
+.adm-status-chg-btn {
+  text-align: center;
+  width: 500px;
+  background-color: #f08080;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFF;
+  border-radius: 3px;
+  margin: 0px 0px;
+  padding: 2vh 2vw;
 }
