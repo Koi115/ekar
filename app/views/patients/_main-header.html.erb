@@ -1,15 +1,6 @@
 <div class="main-header">
   <div class="main-header-wrap">
 
-    <%# <div class="main-header-ward">
-      <select name="ward-num">
-        <option value='2'>外来</option>
-        <option value='3'>1病棟</option>
-        <option value='4'>2病棟</option>
-      </select>
-    </div> %>
-
-
     <%= form_with url: root_path, method: :get, local: true do |f| %>
     <div class="main-header-search">
       <%= f.collection_select(:ward_num, Ward.all, :id, :name, {selected: @ward_num}, {class:"main-header-ward", id:"ward"}) %>
@@ -30,7 +21,7 @@
         <div>患者数</div>
           <div  class="contents-font">
             <div>現在数 <%= @patient_count %> 名</div>
-            <div>総床数  50 名</div>
+            <div>総床数  <%= @ward_max_num_beds %> 名</div>
             <div>　</div>
           </div>
       </div>
