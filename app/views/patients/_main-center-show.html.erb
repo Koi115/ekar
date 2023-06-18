@@ -63,12 +63,12 @@
           <br>
           <br>
           <div class="basic-info-edit">
-            <%= link_to "外来へ戻す", pending_admission_request_path, method: :put, class: "adm-status-chg-btn" %> 
+            <%= link_to "外来へ戻す", pending_admission_request_path(:key => "outpatient"), method: :put, class: "adm-status-chg-btn" %> 
           </div>
 <%# 入院ステータスが入院中ならば、 %>
         <% else %>
           <div class="basic-info-edit">
-            <%= link_to "退院処理", root_path, method: :get, class: "adm-status-chg-btn" %> 
+            <%= link_to "退院処理", discharge_path, method: :put, class: "adm-status-chg-btn" %> 
           </div>
         <% end %>
       </div>

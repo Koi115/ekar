@@ -1,5 +1,5 @@
 # アプリケーション名
-SimKar
+eKar
 
 # アプリケーション概要
 中小規模病医療施設用の患者情報管理システム
@@ -8,6 +8,10 @@ SimKar
 https://ekar.onrender.com
 
 # テスト用ログインアカウント
+basic認証<br>
+  ID:aaaa<br>
+  Password:0000
+
 管理者<br>
   ID:12345<br>
   Password:12345

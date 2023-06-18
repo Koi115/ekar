@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:edit, :update]
   resources :admissions, only: [:update]
   resources :pending_admission_requests, only: [:edit, :update]
-
+  resources :discharges, only: [:update]
 
 
 end
