@@ -1,4 +1,4 @@
-<%= form_with(model: @admission, url: pending_admission_request_path, local: true,  class: 'registration-main' ) do |f| %>
+<%= form_with(model: @admission, url: pending_admission_request_path(:key => "admission"), local: true,  class: 'registration-main' ) do |f| %>
 
 
 <div class='form-wrap'>
