@@ -21,7 +21,7 @@ class PendingAdmissionRequestsController < ApplicationController
       # redirect_to "/patients/#{@patient.id}"
       redirect_to root_path
     elsif params[:key] == "admission"
-      binding.pry
+      # binding.pry
       @admission.update(admission_params)
       redirect_to root_path
     else
