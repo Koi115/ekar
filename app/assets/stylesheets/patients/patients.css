@@ -6,7 +6,7 @@
 
 /*** サイドバー *********************************************************/
 .side-bar {
-  background-color: #00ced1;
+  background-image: linear-gradient(#48d1cc, #6495ed);
   width: 300px;
   height: 100vh;
 }
@@ -29,7 +29,8 @@ h1, h4 {
 
 
 .side-bar-center {
-  background-color: #6495ed;
+  /* background-color: #6495ed; */
+  background-image: linear-gradient(#48d1cc, #6495ed);
   height: calc(100vh - 80px);
 }
 
@@ -140,7 +141,9 @@ h1, h4 {
 /**** メイン  ヘッダー　**************/
 /* main-header の height を変える場合は、main-center の高さも調整すること */
 .main-header {
-  background-color: #6495ed;
+  /* background-color: #6495ed; */
+  /* background-image: linear-gradient(#48d1cc, #6495ed); */
+  background-image: linear-gradient(#6495ed, #48d1cc);
   height: 80px;
 }
 
